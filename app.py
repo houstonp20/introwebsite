@@ -78,7 +78,7 @@ def run_algorithm():
             data = f'Hold Signal Received for {stock}'
     return data
 
-db_path = '/Users/houstonprewett/Desktop/Python/Alpaca/data.db'
+db_path = '/Backend/data.db'
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
