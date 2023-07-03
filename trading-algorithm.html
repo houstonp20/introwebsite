@@ -3,37 +3,19 @@
 <head>
     <title>Trading Algorithm</title>
     <script>
-        // Function to fetch JSON data and render it
-        function displayJSONData() {
-            // Fetch the JSON file
-            fetch('https://houstonprewett.com/Backend/output.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Get the DOM element where you want to display the data
-                    const container = document.getElementById('json-container');
-
-                    // Clear the container
-                    container.innerHTML = '';
-
-                    // Iterate over the data items
-                    data.forEach(item => {
-                        // Create a new paragraph element for each item
-                        const paragraph = document.createElement('p');
-
-                        // Set the text content of the paragraph to display the item's data
-                        paragraph.textContent = `Action: ${item.Action}, Time: ${item.Time}`;
-
-                        // Append the paragraph to the container
-                        container.appendChild(paragraph);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error fetching JSON data:', error);
-                });
-        }
-
-        // Call the displayJSONData function when the page loads
-        window.addEventListener('load', displayJSONData);
+        fetch('/Backend/output.json')
+          .then(response => response.json())
+          .then(data => {
+            const outputElement = document.getElementById('output');
+            data.forEach(item => {
+              const listItem = document.createElement('li');
+              listItem.textContent = item.Action + ' - ' + item.Time;
+              outputElement.appendChild(listItem);
+            });
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
     </script>
 </head>
 <body>
