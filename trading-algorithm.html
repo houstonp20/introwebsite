@@ -32,11 +32,24 @@
           .catch(error => {
             console.error('Error:', error);
           });
+          fetch('/Backend/positions.json')
+            .then(response => response.json())
+            .then(data => {
+              const outputElement = document.getElementById('json-positions');
+              data.forEach(item => {
+                const listItem = document.createElement('li')
+                listItem.textContent = item.Symbol + '-' + item.Profit;
+                outputElement.appendChild(listItem);
+
+              });
+            })
     </script>
 </head>
 <body>
     <h1>Trading Algorithm</h1>
     <p>This is a basic trading algorithm I built using Python to fetch market data using Polygon's API and make trades on a paper account using Alpaca's API. I then connected it to an sqlite database to display my trade information here. I'm working on building a chart to display my account's value.</p>
+    <h2>Positions</h2>
+    <div id ="json-positions"></div>
     <h2>Signals and Actions</h2>
     <div id="json-container"></div>
 </body>
