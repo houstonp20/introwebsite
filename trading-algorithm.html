@@ -101,7 +101,7 @@
 
           row.appendChild(signalCell);
           row.append(timeCell);
-          table.appendChild(row);
+          tableBody.appendChild(row);
           });
         table.appendChild(tableBody);
         tableContainer.appendChild(table);
@@ -113,6 +113,7 @@
 </head>
 <body>
     <h1>Trading Algorithm</h1>
+    <a href="index.html">Back to Home</a>
     <p>This is a basic trading algorithm I built using Python to fetch market data using Polygon's API and make trades on a paper account using Alpaca's API. I then connected it to an sqlite database and wrote the javascript on this page to display my trade information here.</p>
     <h2>Positions</h2>
     <div id ="positions-table"></div>
