@@ -17,13 +17,18 @@
           border-collapse: collapse;
           background-color: gray;
         }
+        #signals-table td {
+          border: inset 1px white;
+        }
         #positions-table {
             color: white;
             border: 1px white;
             border-collapse: collapse;
             background-color: gray;
         }
-        
+        #positions-table td{
+          border: inset 1px white;
+        }
         h2{
           color: white;
         }
@@ -59,7 +64,6 @@
             });
           table.appendChild(tableBody);
           tableContainer.appendChild(table);
-          tableContainer.style.border = "1px solid white"
         })
         .catch(error => {
           console.error('Error:', error)
@@ -94,7 +98,6 @@
           });
         table.appendChild(tableBody);
         tableContainer.appendChild(table);
-        tableContainer.style.border = "1px solid white";
         })
         .catch(error => {
           console.error('Error:', error)
