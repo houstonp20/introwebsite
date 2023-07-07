@@ -11,7 +11,10 @@
         p{
           color: white;
         }
-        
+        #signals-table {
+          color:  white;
+          table-layout: auto;
+        }
         #positions-table {
             color: white;
         }
@@ -76,7 +79,7 @@
           const row = document.createElement('tr');
           const signalCell = document.createElement('td');
           signalCell.textContent = item.Action;
-          const timeCell = document.createElement('tr');
+          const timeCell = document.createElement('td');
           timeCell.textContent = item.Time;
 
           row.appendChild(signalCell);
