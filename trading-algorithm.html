@@ -21,7 +21,7 @@
           border: 1px solid white;
         }
         #signals-table td {
-          border: inset 1px solid white;
+          border: 1px solid white;
         }
         #positions-table {
             color: white;
@@ -33,11 +33,16 @@
           border: 1px solid white;
         }
         #positions-table td{
-          border: inset 1px solid white;
+          border: 1px solid white;
         }
         h2{
           color: white;
+          display: inline;
+          float: left;
+          padding-right: 600px;
+          padding-left: 20px;
         }
+        
     </style>
     <script>
         fetch('/Backend/positions.json')
@@ -113,9 +118,9 @@
 <body>
     <h1>Trading Algorithm</h1>
     <p>This is a basic trading algorithm I built using Python to fetch market data using Polygon's API and make trades on a paper account using Alpaca's API. I then connected it to an sqlite database and wrote the javascript on this page to display my trade information here.</p>
+    <h2>Signals and Actions</h2>  
     <h2>Positions</h2>
     <div id ="positions-table"></div>
-    <h2>Signals and Actions</h2>
     <div id="signals-table"></div>
 </body>
 </html>
