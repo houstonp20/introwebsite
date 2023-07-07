@@ -27,7 +27,7 @@
             color: white;
             border: 1px solid white;
             background-color: gray;
-            width: 200px;
+            width: 300px;
         }
         #positions-table th {
           border: 1px solid white;
@@ -52,9 +52,12 @@
             tickerHeader.textContent = 'Ticker Symbol of Open Position';
             const profitLossHeader = document.createElement('th');
             profitLossHeader.textContent = 'Profit/Loss';
+            const qtyHeader = document.createElement('th');
+            qtyHeader.textContent = 'Quantity (Negative indicates a Short Position)';
 
             headerRow.appendChild(tickerHeader);
             headerRow.appendChild(profitLossHeader);
+            headerRow.appendChild(qtyHeader);
             tableHeader.appendChild(headerRow);
             table.appendChild(tableHeader);
           const tableBody = document.createElement('tbody');
@@ -64,9 +67,12 @@
               tickercell.textContent = item.Symbol
               const profitLossCell = document.createElement('td');
               profitLossCell.textContent = item['Profit/Loss on Position'];
+              const qtyCell = document.createElement('td');
+              qtyCell.textContent = item['Quantity'];
               
               row.appendChild(tickercell);
               row.appendChild(profitLossCell);
+              row.appendChild(qtyCell);
               tableBody.appendChild(row);
             });
           table.appendChild(tableBody);
