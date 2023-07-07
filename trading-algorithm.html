@@ -13,21 +13,26 @@
         }
         #signals-table {
           color:  white;
-          border: 1px white;
-          border-collapse: collapse;
+          border: 1px solid white;
           background-color: gray;
         }
+        #signals-table th {
+          border: 1px solid white;
+        }
         #signals-table td {
-          border: inset 1px white;
+          border: inset 1px solid white;
         }
         #positions-table {
             color: white;
-            border: 1px white;
-            border-collapse: collapse;
+            border: 1px solid white;
             background-color: gray;
+            margin-right: 600px;
+        }
+        #positions-table th {
+          border: 1px solid white;
         }
         #positions-table td{
-          border: inset 1px white;
+          border: inset 1px solid white;
         }
         h2{
           color: white;
@@ -76,7 +81,7 @@
           const tableHeader = document.createElement('thead');
           const headerRow = document.createElement('tr');
           const signalHeader = document.createElement('th');
-          signalHeader.textContent = 'Signals and Actions';
+          signalHeader.textContent = 'Model Outputs';
           const timeHeader = document.createElement('th');
           timeHeader.textContent = 'Time';
           
@@ -106,7 +111,7 @@
 </head>
 <body>
     <h1>Trading Algorithm</h1>
-    <p>This is a basic trading algorithm I built using Python to fetch market data using Polygon's API and make trades on a paper account using Alpaca's API. I then connected it to an sqlite database to display my trade information here. I'm working on building a chart to display my account's value.</p>
+    <p>This is a basic trading algorithm I built using Python to fetch market data using Polygon's API and make trades on a paper account using Alpaca's API. I then connected it to an sqlite database and wrote the javascript on this page to display my trade information here.</p>
     <h2>Positions</h2>
     <div id ="positions-table"></div>
     <h2>Signals and Actions</h2>
