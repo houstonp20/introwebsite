@@ -40,90 +40,19 @@
         }
         
     </style>
-    <script>
-        fetch('/Backend/positions.json')
-          .then(response => response.json())
-          .then(data => {
-            const tableContainer = document.getElementById('positions-table');
-            const table = document.createElement('table');
-            const tableHeader = document.createElement('thead');
-            const headerRow = document.createElement('tr');
-            const tickerHeader = document.createElement('th');
-            tickerHeader.textContent = 'Ticker Symbol of Open Position';
-            const profitLossHeader = document.createElement('th');
-            profitLossHeader.textContent = 'Profit/Loss';
-            const qtyHeader = document.createElement('th');
-            qtyHeader.textContent = 'Quantity (Negative indicates a Short Position)';
-
-            headerRow.appendChild(tickerHeader);
-            headerRow.appendChild(profitLossHeader);
-            headerRow.appendChild(qtyHeader);
-            tableHeader.appendChild(headerRow);
-            table.appendChild(tableHeader);
-          const tableBody = document.createElement('tbody');
-            data.forEach(item=>{
-              const row = document.createElement('tr');
-              const tickercell = document.createElement('td')
-              tickercell.textContent = item.Symbol
-              const profitLossCell = document.createElement('td');
-              profitLossCell.textContent = item['Profit/Loss on Position'];
-              const qtyCell = document.createElement('td');
-              qtyCell.textContent = item['Quantity'];
-              
-              row.appendChild(tickercell);
-              row.appendChild(profitLossCell);
-              row.appendChild(qtyCell);
-              tableBody.appendChild(row);
-            });
-          table.appendChild(tableBody);
-          tableContainer.appendChild(table);
-        })
-        .catch(error => {
-          console.error('Error:', error)
-        });
-      fetch('/Backend/output.json')
-        .then(response => response.json())
-        .then(data =>{
-          const tableContainer = document.getElementById('signals-table');
-          const table = document.createElement('table');
-          const tableHeader = document.createElement('thead');
-          const headerRow = document.createElement('tr');
-          const signalHeader = document.createElement('th');
-          signalHeader.textContent = 'Model Outputs';
-          const timeHeader = document.createElement('th');
-          timeHeader.textContent = 'Time';
-          
-          headerRow.appendChild(signalHeader);
-          headerRow.appendChild(timeHeader);
-          tableHeader.appendChild(headerRow);
-          table.appendChild(tableHeader);
-        const tableBody = document.createElement('tbody');
-        data.forEach(item => {
-          const row = document.createElement('tr');
-          const signalCell = document.createElement('td');
-          signalCell.textContent = item.Action;
-          const timeCell = document.createElement('td');
-          timeCell.textContent = item.Time;
-
-          row.appendChild(signalCell);
-          row.append(timeCell);
-          tableBody.appendChild(row);
-          });
-        table.appendChild(tableBody);
-        tableContainer.appendChild(table);
-        })
-        .catch(error => {
-          console.error('Error:', error)
-        });
-    </script>
+    <script src="/Backend/table_script.js"></script>
 </head>
 <body>
     <h1>Trading Algorithm</h1>
     <a href="index.html">Back to Home</a>
     <p>This is a basic trading algorithm I built using Python to fetch market data using Polygon's API and make trades on a paper account using Alpaca's API. I then connected it to an sqlite database and wrote the javascript on this page to display my trade information here.</p>
-    <h2>Positions</h2>
-    <div id ="positions-table"></div>
-    <h2>Signals and Actions</h2>  
-    <div id="signals-table"></div>
+    <div id="positions-table-container">
+      <h2>Positions</h2>
+      <div id ="positions-table"></div>
+    </div> 
+    <div id="signals-table-container">
+      <h2>Signals and Actions</h2>  
+      <div id="signals-table"></div>
+    </div>
 </body>
 </html>
