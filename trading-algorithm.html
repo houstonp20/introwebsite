@@ -65,16 +65,18 @@
           color: darkred;
         }
         @media (max-width: 768px) {
-            .table {
-                max-width: 100%; 
+            #table-container {
+                display: inline-block;
+                max-width: 100%;
             }
 
-            #tablecontainer {
-                flex-direction: column; 
+            .table {
+                width: 100%;
+                height: auto;
             }
 
             #chart-container {
-                order: 3; 
+                display: inline-block;
             }
         }
 
