@@ -65,14 +65,19 @@
           color: darkred;
         }
         @media (max-width: 768px) {
-          .table {
-            max-width: 100%;
-          }
-          #charts {
-            order: 3;
-            align-items: flex-start;
-          }
+            .table {
+                max-width: 100%; 
+            }
+
+            #tablecontainer {
+                flex-direction: column; 
+            }
+
+            #chart-container {
+                order: 3; 
+            }
         }
+
 
 
     </style>
