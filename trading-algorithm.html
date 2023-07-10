@@ -16,7 +16,6 @@
           color:  white;
           border: 1px solid white;
           background-color: gray;
-          width: 600px;
         }
         #signals-table th {
           border: 1px solid white;
@@ -28,7 +27,6 @@
             color: white;
             border: 1px solid white;
             background-color: gray;
-            width: 300px;
         }
         #positions-table th {
           border: 1px solid white;
@@ -36,27 +34,46 @@
         #positions-table td{
           border: 1px solid white;
         }
+        #tablecontainer {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .table {
+          flex: 1;
+          height: 220px;
+          max-width: 50%;
+        }
         h2{
           color: white;
         }
 
         #chart-container {
-          float: right;
-          margin-right: 50px;
-          width: 750px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
         }
         .charts {
         background-color: white;
-        width: 750px;
         margin-top: 10px;
+        width: 100%;
+        max-width: 700px;
         }
-        #tablecontainer {
-          display: flex;
+        .positive {
+          color: lightgreen;
         }
-        .table {
-          flex: 1;
-          height: 300px;
+        .negative {
+          color: darkred;
         }
+        @media (max-width: 768px) {
+          .table {
+            max-width: 100%;
+          }
+          #charts {
+            order: 3;
+            align-items: flex-start;
+          }
+        }
+
 
     </style>
     <script src="script.js"></script>
