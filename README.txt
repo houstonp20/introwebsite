@@ -3,13 +3,10 @@ one of the pages I set up to display the results of a trading algorithm I built.
 has been for this, so I will summarize it briefly.
 
 * trading-algorithm.html
-This is the results page for a very basic trading algorithm I built using Python to access Polygon's free market-data API and make 
-trades based off of that information using Alpaca's paper-trading API. I will provide a brief summary of how it 
+This is the results page for a very basic trading algorithm I built using Python to access Yahoo Finance market-data using their API and make trades based off of that information using Alpaca's paper-trading API. I will provide a brief summary of how it 
 works here with more explanation of the actual logic below, but you can check it out for yourself in the Backend folder in the python files. 
 
-Step 1: The data_collections file is called. This makes a call to the Polygon API to get the market data of every stock in my 'stocks' list. 
-It then calculates the stochastic oscillator and 20 and 50 day Simple Moving Averages for each stock. It returns those as a dataframe with
-columns for the indicators and the price data. 
+Step 1: The data_collections file is called. This makes a call to the yfinance API to get the market data of every stock in my 'stocks' list. It then calculates the stochastic oscillator and 20 and 50 day Simple Moving Averages for each stock. It returns those as a dataframe with columns for the indicators and the price data. 
 
 Step 2: The trading_decisions file is called. It runs a function to check whether the signal is bullish, bearish, or neither. Next, it 
 checks proximity to fibonacci numbers to decide whether a signal should be acted upon. It then returns a dataframe with 'Hold', 'Buy', 
