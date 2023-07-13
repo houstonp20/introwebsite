@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+<style>
+body {
+    background-color: black;
+}
+p {
+    color: white;
+    max-width: 50%;
+}
+a {
+    color: lightblue;
+}
+h1 {
+    color: white;
+}
+#pic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    max-height: fit-content;
+}
+.images {
+    flex: 1;
+    max-height: 30%;
+    max-width: 30%;
+    padding: 30px;
+    object-fit: scale-down;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+@media (max-width: 768px) {
+    .images {
+        max-width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+    <div id="container">
+        <h1>Swan Mountain Outfitters (Glacier National Park) Summer 2021</h1>
+        <a href="index.html">Back to Home</a>
+        <p id="montana">In the summer of 2020 I worked for <a href="https://www.swanmountainoutfitters.com/">Swan Mountain Outfitters</a> in Glacier National Park Montana. 
+        Below you can see Andretti, one of the horses I rode, and a picture of me hiking to 
+        Cracker Lake with two of my coworkers.</p>
+    </div>
+    <div id="pic-container">
+            <img class="images" src="images/andretti.jpeg" alt="Halflinger Horse with Saddle and Saddlebags">
+            <img class="images" src="images/crackerlake.jpeg" alt="Three people in front of a lake">
+    </div>
+    
+</body>
+
+</html>
