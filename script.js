@@ -52,7 +52,7 @@ fetch('Backend/output.json')
           const tableHeader = document.createElement('thead');
           const headerRow = document.createElement('tr');
           const signalHeader = document.createElement('th');
-          signalHeader.textContent = 'Model Outputs For Last 7 Days';
+          signalHeader.textContent = 'Model Outputs For Today';
           const timeHeader = document.createElement('th');
           timeHeader.textContent = 'Time';
           
