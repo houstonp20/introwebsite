@@ -40,10 +40,11 @@
         #tablecontainer {
           display: flex;
           flex-wrap: wrap;
+          max-height: 200px;
+          overflow-y: auto;
         }
         .table {
           flex: 1;
-          height: 220px;
           max-width: 50%;
         }
         h2{
@@ -52,14 +53,17 @@
 
         #chart-container {
           display: flex;
-          flex-direction: column;
-          align-items: flex-end;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          padding: 10px;
+          width: 100%;
         }
         .charts {
         background-color: white;
-        margin-top: 10px;
-        width: 100%;
-        max-width: 700px;
+        padding: 10px;
+        flex-basis: 45%;
+        max-width: 50%;
         }
         .positive {
           color: lightgreen;
@@ -69,7 +73,6 @@
         }
         @media (max-width: 768px) {
             #table-container {
-                display: inline-block;
                 max-width: 100%;
             }
 
@@ -79,8 +82,9 @@
             }
 
             #chart-container {
-                display: inline-block;
+                width: 100%;
             }
+
         }
 
 
