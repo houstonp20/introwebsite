@@ -9,21 +9,26 @@ works here with more explanation of the actual logic below, but you can check it
 # Step 1: 
 The data_collections file is called. This makes a call to the yfinance API to get the market data of every stock in my 'stocks' list. It then calculates the stochastic oscillator and 20 and 50 day Simple Moving Averages for each stock. It returns those as a dataframe with columns for the indicators and the price data. 
 
-Step 2: The trading_decisions file is called. It runs a function to check whether the signal is bullish, bearish, or neither. Next, it 
+# Step 2:
+The trading_decisions file is called. It runs a function to check whether the signal is bullish, bearish, or neither. Next, it 
 checks proximity to fibonacci numbers to decide whether a signal should be acted upon. It then returns a dataframe with 'Hold', 'Buy', 
 or 'Sell' signals for each stock.
 
-Step 3: The app file iterates through each stock to check its signal, whether it confirms or denies my position, and whether I have enough 
+# Step 3:
+The app file iterates through each stock to check its signal, whether it confirms or denies my position, and whether I have enough 
 buying power to act upon it. Information about any orders placed or hold signals received are appended to a list that is reset every 
 time the algorithm is run and the list is returned as the output.
 
-Step 4: The account file is called. The list from the previous step is inserted into an sqlite3 database stored locally in a table called 
+# Step 4:
+The account file is called. The list from the previous step is inserted into an sqlite3 database stored locally in a table called 
 'alpaca_signals'. My open positions are stored into a table called 'alpaca_positions', and my portfolio equity and profit/loss
 history are stored in a table called 'portfolio_history'.
 
-Step 5: The tables are then written into json form and, using github's API, their contents are stored in my repo in .json files. 
+# Step 5: 
+The tables are then written into json form and, using github's API, their contents are stored in my repo in .json files. 
 
-Step 6: The javascript on my trading-algorithm.html file creates a table for the positions and signals, and a chart for the 
+# Step 6: 
+The javascript on my trading-algorithm.html file creates a table for the positions and signals, and a chart for the 
 profit/loss and equity.
 
 * Algorithm Logic
